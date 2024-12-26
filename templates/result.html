@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonuç</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+
+<body>
+    <div class="result-container">
+        <h1>Sonuçlar</h1>
+        <p>Girilen Telefon Numarası: <strong>{{ phone_number }}</strong></p>
+
+        {% if possible_countries %}
+        <h2>Olası Ülkeler ve Formatlanmış Numaralar:</h2>
+        <ul>
+            {% for country in possible_countries %}
+            <li>Ülke: <strong>{{ country[0] }}</strong>, Formatlı Numara: <strong>{{ country[1] }}</strong></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Girilen telefon numarası geçerli değil. Lütfen tekrar deneyin.</p>
+        {% endif %}
+
+        <a href="/">Yeni bir numara kontrol et</a>
+    </div>
+</body>
+
+</html>

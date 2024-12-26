@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefon Numarası Kontrolü</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <form method="POST">
+        <h1>Telefon Numara Kontrolü</h1>
+        <label for="phone_number">Telefon Numarası Girin:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <button type="submit">Kontrol Et</button>
+        <p>Telefon numaranızı girin ve kontrol edin.</p>
+        <button type="button" class="country-btn" onclick="showCountryCodes()">Country Code Dahil Olan Ülkeler</button>
+        <div id="countryList" class="country-list">
+            <span>AD</span><span>AL</span><span>AR</span><span>AT</span><span>AU</span><span>AZ</span><span>BA</span><span>BE</span>
+            <span>BG</span><span>BH</span><span>BY</span><span>CA</span><span>CH</span><span>CO</span><span>CY</span><span>CZ</span>
+            <span>DE</span><span>DK</span><span>DZ</span><span>EE</span><span>EG</span><span>ES</span><span>FI</span><span>FO</span>
+            <span>FR</span><span>GB</span><span>GG</span><span>GI</span><span>GR</span><span>HR</span><span>HU</span><span>IE</span>
+            <span>IM</span><span>IQ</span><span>IS</span><span>IT</span><span>JE</span><span>KW</span><span>LI</span><span>LT</span>
+            <span>LU</span><span>LV</span><span>MA</span><span>MC</span><span>MD</span><span>ME</span><span>MK</span><span>MT</span>
+            <span>NL</span><span>NO</span><span>NZ</span><span>OM</span><span>PE</span><span>PL</span><span>PT</span><span>QA</span>
+            <span>RO</span><span>RS</span><span>RU</span><span>SA</span><span>SE</span><span>SI</span><span>SJ</span><span>SK</span>
+            <span>SM</span><span>TR</span><span>UA</span><span>US</span><span>XK</span>
+        </div>
+        <a href="https://thelodose.com/wicac/" class="find-btn" style="display: inline-block; padding: 10px 20px; background-color: #0f1699; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;">+X Nerenin Kodu?</a>
+    </form>
+    
+    
+    <a href="https://thelodose.com/" class="back-button">
+        &#8592; The Lodose
+    </a>
+    
+
+    <script>
+        function showCountryCodes() {
+            var countryList = document.getElementById('countryList');
+            var heading = document.querySelector('h1');  // Hedef başlık
+    
+            if (countryList.style.display === 'none' || countryList.style.display === '') {
+                countryList.style.display = 'block';
+                heading.scrollIntoView({ behavior: 'smooth' }); // Başlığa yumuşak kaydırma
+            } else {
+                countryList.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
